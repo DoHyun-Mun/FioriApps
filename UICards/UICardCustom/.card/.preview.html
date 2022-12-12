@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    var _oCardInfo = {
+        cardWrapperCSSPath : "/tmp/vscode-unpacked/uicard-dk-1.3.20220425.vsix/extension/resources/style/previewwrapper.css",
+        cardMetaPath : "/home/user/projects/UICardCustom/manifest.json",
+        cardMeta : JSON.parse(unescape("%7B%0A%09%22_version%22%3A%20%221.14.0%22%2C%0A%09%22sap.app%22%3A%20%7B%0A%09%09%22id%22%3A%20%22com.sap.sample.UICardCustom%22%2C%0A%09%09%22type%22%3A%20%22card%22%2C%0A%09%09%22title%22%3A%20%22%uCEE4%uC2A4%uD140%uCE74%uB4DC%uC0D8%uD50C%22%2C%0A%09%09%22subTitle%22%3A%20%22%22%2C%0A%09%09%22applicationVersion%22%3A%20%7B%0A%09%09%09%22version%22%3A%20%221.0.0%22%0A%09%09%7D%0A%09%7D%2C%0A%09%22sap.ui%22%3A%20%7B%0A%09%09%22technology%22%3A%20%22UI5%22%2C%0A%20%20%20%20%20%20%20%20%22deviceTypes%22%3A%20%7B%22desktop%22%3A%20true%2C%20%22phone%22%3A%20true%2C%20%22tablet%22%3A%20true%7D%2C%0A%09%09%22icons%22%3A%20%7B%0A%09%09%09%22icon%22%3A%20%22sap-icon%3A//business-card%22%0A%09%09%7D%0A%09%7D%2C%0A%20%20%20%20%22sap.ui5%22%3A%20%7B%0A%09%09%22rootView%22%3A%20%7B%0A%09%09%09%22viewName%22%3A%20%22com.sap.sample.UICardCustom.Custom%22%2C%0A%09%09%09%22type%22%3A%20%22XML%22%2C%0A%09%09%09%22async%22%3A%20true%0A%09%09%7D%2C%0A%09%09%22dependencies%22%3A%20%7B%0A%09%09%09%22libs%22%3A%20%7B%0A%09%09%09%09%22sap.ui.core%22%3A%20%7B%7D%2C%0A%09%09%09%09%22sap.f%22%3A%20%7B%7D%2C%0A%09%09%09%09%22sap.m%22%3A%20%7B%7D%0A%09%09%09%7D%0A%09%09%7D%2C%0A%20%20%20%20%20%20%20%20%22resources%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22css%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22uri%22%3A%20%22css/style.css%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%09%09%22config%22%3A%20%7B%0A%09%09%09%22sample%22%3A%20%7B%0A%09%09%09%09%22files%22%3A%20%5B%0A%09%09%09%09%09%22Custom.view.xml%22%2C%0A%09%09%09%09%09%22Logic.controller.js%22%2C%0A%09%09%09%09%09%22manifest.json%22%2C%0A%09%09%09%09%09%22model/sample.json%22%0A%09%09%09%09%5D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%2C%0A%20%20%20%20%22sap.card%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22type%22%3A%20%22Component%22%2C%0A%20%20%20%20%20%20%20%20%22designtime%22%3A%20%22dt/configuration%22%2C%0A%20%20%20%20%20%20%20%20%22header%22%3A%20%7B%0A%09%09%09%22icon%22%3A%20%7B%0A%09%09%09%09%22src%22%3A%20%22sap-icon%3A//bus-public-transport%22%0A%09%09%09%7D%2C%0A%09%09%09%22title%22%3A%20%22Product%20List%22%2C%0A%09%09%09%22subTitle%22%3A%20%22This%20is%20sample%20product%20list%21%21%22%0A%09%09%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22sap.platform.mobilecards%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22compatible%22%3A%20false%0A%20%20%20%20%7D%0A%7D")),
+        CardMetaError : "",
+        cardBasePath : "/home/user/projects/UICardCustom/",
+        cardBaseRelativePath : ".",
+        cardUseMeta: false,
+        cardWPBaseURL : "",//getWPBaseURL(),
+        cardDestinationBaseURL: "",//getWPBaseURL(true),
+        ui5Version: "1.99.0",
+        ui5Url: "https://sapui5.hana.ondemand.com/1.99.0/resources/sap-ui-core.js"
+    };
+
+    function getWPBaseURL(bDestination) {
+        var path = window.location.href;
+        path = bDestination?path.substring(0, path.indexOf("mini-browser")):path.substring(0, path.indexOf("mini-browser")+12);
+        return path;
+    }
+    function addSheetFile(path){
+        var fileref=parent.document.createElement("link");
+        fileref.id="cardpreviewwrapper";
+        fileref.rel="stylesheet";
+        fileref.type="text/css";
+        fileref.href=getWPBaseURL() + '/' + path;
+        fileref.media="screen";
+        var headobj=parent.document.getElementsByTagName('head')[0];
+        headobj.appendChild(fileref);
+    }
+    function delSheetFile(){
+        var headobj=parent.document.getElementsByTagName('head')[0];
+        var linkobj = parent.document.getElementById("cardpreviewwrapper");
+        if (headobj && linkobj) {
+            headobj.removeChild(linkobj);
+        }
+    }
+window.parent.addEventListener('message', event => {
+    if (typeof(event.data) == "string" || !event.data.data) return;
+    const message = event.data.data;
+    switch (message.cmd) {
+        case 'refreshPreview':
+            document.updateCard(message.data);
+            break;
+        default: break;
+    }
+});
+    document.loadCard = function()
+    {
+        _oCardInfo.cardWPBaseURL = getWPBaseURL();
+        _oCardInfo.cardDestinationBaseURL = getWPBaseURL(true);
+
+        addSheetFile(_oCardInfo.cardWrapperCSSPath);
+        var contentDoc=document.getElementById("previewframe").contentDocument;
+        var ui5Url = _oCardInfo.ui5Url; //"https://sapui5.hana.ondemand.com/" + _oCardInfo.ui5Version + "/resources/sap-ui-core.js";
+        contentDoc.loadCard(ui5Url, _oCardInfo);
+        //contentDoc.previewCard(_oCardInfo);
+    };
+
+    document.updateCard = function(data)
+    {
+        var meta = "{}", metaError = "";
+        try {
+            meta = JSON.parse(data.meta);
+        }catch(err) {
+            meta = "{}";
+            metaError = err.message;
+        }
+        _oCardInfo.cardMetaPath = data.path;
+        _oCardInfo.cardMeta = meta;
+        _oCardInfo.CardMetaError = metaError;
+        _oCardInfo.cardBasePath = data.cardBasePath;
+        _oCardInfo.cardBaseRelativePath = data.cardBaseRelativePath;
+        _oCardInfo.cardUseMeta = true;
+        _oCardInfo.cardWPBaseURL = getWPBaseURL();
+        _oCardInfo.cardDestinationBaseURL = getWPBaseURL(true);
+        if (data.ui5Version !== _oCardInfo.ui5Version) {
+            var iframe=document.getElementById("previewframe");
+            _oCardInfo.ui5Version = data.ui5Version;
+            iframe.src = getWPBaseURL() + '/' + "/tmp/vscode-unpacked/uicard-dk-1.3.20220425.vsix/extension/resources/previewcard.html" + "?time="+new Date().getTime();
+            //iframe.src = getWPBaseURL() + '/' + "/tmp/vscode-unpacked/uicard-dk-1.3.20220425.vsix/extension/resources/previewcard.html" + "?ui5Version="+_oCardInfo.ui5Version+"&time="+new Date().getTime();
+            return;
+        }
+        var contentDoc=document.getElementById("previewframe").contentDocument;
+        contentDoc.updateCard(_oCardInfo);
+    };
+    </script>
+</head>
+
+<body style="margin:0;"  onunload="unload()" >
+    <iframe id="previewframe" width="100%" style="display:block;border: none;"></iframe>
+    <script type="text/javascript">
+    var iframe=document.getElementById("previewframe");
+    iframe.src = getWPBaseURL() + '/' + "/tmp/vscode-unpacked/uicard-dk-1.3.20220425.vsix/extension/resources/previewcard.html" + "?time="+new Date().getTime();
+    //iframe.src = getWPBaseURL() + '/' + "/tmp/vscode-unpacked/uicard-dk-1.3.20220425.vsix/extension/resources/previewcard.html" + "?ui5Version="+_oCardInfo.ui5Version;
+    //iframe.src = pre + "/tmp/vscode-unpacked/uicard-dk-1.3.20220425.vsix/extension/resources/previewcard.html?cardBasePath=\"/home/user/projects/UICardCustom/\"";
+    if (iframe.attachEvent){
+        iframe.attachEvent("onload", function(){
+            //var height=($.browser.msie||$.browser.opera)? iframe.document.body.scrollHeight:iframe.contentDocument.body.offsetHeight;
+            //var height=($.browser.msie||$.browser.opera)? document.body.scrollHeight:document.body.offsetHeight;
+            iframe.height = window.innerHeight;
+            document.loadCard();
+        });
+        iframe.attachEvent("onunload", function(){
+            delSheetFile();
+        });
+    } else {
+        iframe.onload = function(){
+            //var height=($.browser.msie||$.browser.opera)? iframe.document.body.scrollHeight:iframe.contentDocument.body.offsetHeight;
+            //var height=($.browser.msie||$.browser.opera)? document.body.scrollHeight:document.body.offsetHeight;
+            iframe.height = window.innerHeight;
+            document.loadCard();
+        };
+        iframe.onunload = function(){
+            delSheetFile();
+        };
+    }
+    window.onunload = function(){
+        //alert("window.onunload");
+        //delSheetFile();
+    };
+
+    </script>
+</body>
+</html>

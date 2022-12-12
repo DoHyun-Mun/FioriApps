@@ -1,0 +1,67 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "com.sap.sample.UICard",
+		"type": "card",
+		"title": "Sample of a List",
+		"subTitle": "Sample of a List",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"shortTitle": "A short title for this Card",
+		"info": "Additional information about this Card",
+		"description": "A long description for this Card",
+		"tags": {
+			"keywords": [
+				"List",
+				"Highlight",
+				"Card",
+				"Sample"
+			]
+		}
+	},
+	"sap.card": {
+        "extension": "./DataExtension",
+		"type": "List",
+		"editor": "dt/Configuration",
+		"header": {
+			"title": "{{parameters.title}}",
+			"subTitle": "{{parameters.subTitle}}",
+			"icon": {
+				"src": "sap-icon://desktop-mobile"
+			},
+			"status": {
+				"text": "5 of 20"
+			}
+		},
+		"configuration": {
+			"parameters": {
+				"title" : {
+					"value": "List Card with Top 5 Products" ,
+                    "type" : "string",
+                    "label" : "차트타이틀입력"
+
+				},
+				"subTitle": {
+					"value": "These are the top sellers this month",
+                    "type" : "string",
+                    "label" : "서브타이틀입력"
+				}
+			}
+		},
+		"content": {
+			"data": {
+				"extension": {
+                    "method": "getData"
+                },
+                "path": "/value"
+			},
+			"maxItems": 5,
+			"item": {
+				"title": "{ProductName}",
+				"description": "{QuantityPerUnit}",
+				"highlight": "{= ${ProductID}===1 ? 'Error' : ${ProductID}===2 ? 'Success' : ${ProductID}===3 ? 'Information' : ${ProductID}===4 ? 'Warning' : 'None'}"
+			}
+		}
+	}
+}

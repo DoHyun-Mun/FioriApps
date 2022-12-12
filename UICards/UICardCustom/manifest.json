@@ -1,0 +1,64 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "com.sap.sample.UICardCustom",
+		"type": "card",
+		"title": "커스텀카드샘플",
+		"subTitle": "",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://business-card"
+		}
+	},
+    "sap.ui5": {
+		"rootView": {
+			"viewName": "com.sap.sample.UICardCustom.Custom",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.f": {},
+				"sap.m": {}
+			}
+		},
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+		"config": {
+			"sample": {
+				"files": [
+					"Custom.view.xml",
+					"Logic.controller.js",
+					"manifest.json",
+					"model/sample.json"
+				]
+			}
+		}
+	},
+    "sap.card": {
+        "type": "Component",
+        "designtime": "dt/configuration",
+        "header": {
+			"icon": {
+				"src": "sap-icon://bus-public-transport"
+			},
+			"title": "Product List",
+			"subTitle": "This is sample product list!!"
+		}
+    },
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
