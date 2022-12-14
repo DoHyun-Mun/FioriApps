@@ -1,0 +1,73 @@
+<mvc:View displayBlock="true" controllerName="com.sap.demo.flexiblelayout.controller.Master" height="100%"
+	  xmlns="sap.m"
+	  xmlns:f="sap.f"
+	  xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId"
+				   toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
+				<f:heading>
+					<Title id="_IDGenTitle1" text="Products ({products>/ProductCollectionStats/Counts/Total})"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<Table
+				id="productsTable"
+				mode="SingleSelectMaster"
+				itemPress="onListItemPress"
+				inset="false"
+				items="{
+					path: 'products>/ProductCollection',
+					sorter: {
+						path: 'Name'
+					}
+				}"
+				class="sapFDynamicPageAlignContent"
+				width="auto">
+				<headerToolbar>
+					<OverflowToolbar id="_IDGenOverflowToolbar1">
+						<ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+						<SearchField id="_IDGenSearchField1" search="onSearch" width="17.5rem"/>
+						<OverflowToolbarButton id="_IDGenOverflowToolbarButton1" icon="sap-icon://add" type="Transparent" press="onAdd"/>
+						<OverflowToolbarButton id="_IDGenOverflowToolbarButton2" icon="sap-icon://sort" type="Transparent" press="onSort"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="_IDGenColumn1" width="12em">
+						<Text id="_IDGenText1" text="Product" />
+					</Column>
+					<Column id="_IDGenColumn2"	hAlign="End">
+						<Text id="_IDGenText2" text="Price" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="_IDGenColumnListItem1" type="Navigation">
+						<cells>
+							<ObjectIdentifier id="_IDGenObjectIdentifier1" title="{products>Name}" text="{products>ProductId}" />
+							<ObjectNumber id="_IDGenObjectNumber1"
+									number="{
+										parts:[{path:'products>Price'},{path:'products>CurrencyCode'}],
+										type: 'sap.ui.model.type.Currency',
+										formatOptions: {showMeasure: false}
+									}"
+									unit="{products>CurrencyCode}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</f:content>
+
+		<!-- DynamicPage Footer -->
+		<f:footer>
+			<OverflowToolbar id="_IDGenOverflowToolbar2">
+				<ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+				<Button id="_IDGenButton1" type="Accept" text="Accept"/>
+				<Button id="_IDGenButton2" type="Reject" text="Reject"/>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>

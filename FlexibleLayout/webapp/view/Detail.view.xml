@@ -1,0 +1,137 @@
+<mvc:View displayBlock="true" controllerName="com.sap.demo.flexiblelayout.controller.Detail" height="100%"
+		xmlns="sap.uxap"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:f="sap.f"
+		xmlns:form="sap.ui.layout.form">
+
+	<ObjectPageLayout id="ObjectPageLayout"
+					 showTitleInHeaderContent="true"
+					alwaysShowContentHeader="false"
+					preserveHeaderStateOnScroll="false"
+					headerContentPinnable="true"
+					isChildPage="true"
+					upperCaseAnchorBar="false">
+				<headerTitle>
+					<ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1">
+						<expandedHeading>
+							<m:Title id="_IDGenTitle1" text="{products>Name}" wrapping="true" class="sapUiSmallMarginEnd"/>
+						</expandedHeading>
+
+						<snappedHeading>
+							<m:FlexBox id="_IDGenFlexBox1" wrap="Wrap" fitContainer="true" alignItems="Center">
+								<m:FlexBox id="_IDGenFlexBox2" wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+									<!--<f:Avatar id="_IDGenAvatar1" src="../../../../../../../{products>ProductPicUrl}" displaySize="S" displayShape="Square"/>-->
+									<m:Title id="_IDGenTitle2" text="{products>Name}" wrapping="true" class="sapUiTinyMarginEnd"/>
+								</m:FlexBox>
+							</m:FlexBox>
+						</snappedHeading>
+
+						<navigationActions>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" id="exitFullScreenBtn" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>
+							<m:OverflowToolbarButton id="_IDGenOverflowToolbarButton1" type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close middle column" visible="{= ${/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+						</navigationActions>
+
+						<actions>
+							<m:Button id="_IDGenButton1"
+									text="Edit"
+									type="Emphasized"
+									press="toggleAreaPriority"/>
+							<m:Button id="_IDGenButton2"
+									text="Delete"
+									type="Transparent"/>
+							<m:Button id="_IDGenButton3"
+									text="Copy"
+									type="Transparent"/>
+							<m:Button id="_IDGenButton4"
+									text="Toggle Footer"
+									type="Transparent"
+									press="onToggleFooter"/>
+							<m:Button id="_IDGenButton5"
+									icon="sap-icon://action"
+									type="Transparent"/>
+						</actions>
+
+					</ObjectPageDynamicHeaderTitle>
+				</headerTitle>
+
+				<headerContent>
+					<m:FlexBox id="_IDGenFlexBox3" wrap="Wrap" fitContainer="true" alignItems="Stretch">
+						<!--<f:Avatar id="_IDGenAvatar2" src="../../../../../../../{products>ProductPicUrl}"
+								  displaySize="L"
+								  displayShape="Square"
+								  class="sapUiTinyMarginEnd">						
+						</f:Avatar>
+						-->
+						<m:VBox id="_IDGenVBox1" justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label id="_IDGenLabel1" text="Main Category"/>
+							<m:Text id="_IDGenText1" text="{products>MainCategory}"/>
+						</m:VBox>
+						<m:VBox id="_IDGenVBox2" justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label id="_IDGenLabel2" text="Subcategory"/>
+							<m:Text id="_IDGenText2" text="{products>Category}"/>
+						</m:VBox>
+						<m:VBox id="_IDGenVBox3" justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label id="_IDGenLabel3" text="Price"/>
+							<m:ObjectNumber id="_IDGenObjectNumber1" number="{products>CurrencyCode} {products>Price}" emphasized="false"/>
+						</m:VBox>
+					</m:FlexBox>
+				</headerContent>
+
+		<sections>
+			<ObjectPageSection id="_IDGenObjectPageSection1" title="General Information">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection1">
+						<blocks>
+							<form:SimpleForm id="_IDGenSimpleForm1"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1">
+								<form:content>
+									<m:Label id="_IDGenLabel4" text="Product ID"/>
+									<m:Text id="_IDGenText3" text="{products>ProductId}"/>
+									<m:Label id="_IDGenLabel5" text="Description"/>
+									<m:Text id="_IDGenText4" text="{products>Description}"/>
+									<m:Label id="_IDGenLabel6" text="Supplier"/>
+									<m:Text id="_IDGenText5" text="{products>SupplierName}"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="_IDGenObjectPageSection2" title="Suppliers">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection2">
+						<blocks>
+							<m:Table
+								id="suppliersTable"
+								mode="SingleSelectMaster"
+								itemPress="handleItemPress"
+								items="{path : 'products>/ProductCollectionStats/Filters/1/values'}">
+								<m:columns>
+									<m:Column id="_IDGenColumn1" />
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem id="_IDGenColumnListItem1" type="Navigation">
+										<m:cells>
+											<m:ObjectIdentifier id="_IDGenObjectIdentifier1" text="{products>text}" />
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>
