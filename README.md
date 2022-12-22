@@ -8,6 +8,8 @@ https://wzariba.workzone.cfapps.ap11.hana.ondemand.com/site?sap-language=en#work
 Business Application Studio
 https://wzariba.ap11cf.applicationstudio.cloud.sap/index.html
 
+SAP UI Cards Doc
+https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html
 
 krdemo.user1@gmail.com / Workplace2021
 
