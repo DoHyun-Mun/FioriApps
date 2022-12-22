@@ -11,6 +11,9 @@ https://wzariba.ap11cf.applicationstudio.cloud.sap/index.html
 SAP UI Cards Doc
 https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html
 
+SAP UI5 Fiori
+https://sapui5.hana.ondemand.com/sdk/#/topic/f665d0de4dba405f9af4294de824b03b
+
 krdemo.user1@gmail.com / Workplace2021
 
 demo.user1	Demo111!@
