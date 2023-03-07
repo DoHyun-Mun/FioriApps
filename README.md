@@ -14,6 +14,9 @@ https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardE
 SAP UI5 Fiori
 https://sapui5.hana.ondemand.com/sdk/#/topic/f665d0de4dba405f9af4294de824b03b
 
+SAP Workzone Central Repository
+https://workzone-crp.cfapps.eu10.hana.ondemand.com/comsapsegdmui/index.html
+
 krdemo.user1@gmail.com / Workplace2021
 
 demo.user1	Demo111!@
