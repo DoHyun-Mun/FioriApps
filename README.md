@@ -17,6 +17,13 @@ https://sapui5.hana.ondemand.com/sdk/#/topic/f665d0de4dba405f9af4294de824b03b
 SAP Workzone Central Repository
 https://workzone-crp.cfapps.eu10.hana.ondemand.com/comsapsegdmui/index.html
 
+MS Adaptive Cards
+https://adaptivecards.io
+
+MS Adaptive Card Designer
+https://adaptivecards.io/designer/
+
+
 krdemo.user1@gmail.com / Workplace2021
 
 demo.user1	Demo111!@
