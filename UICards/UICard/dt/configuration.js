@@ -10,7 +10,7 @@ sap.ui.define(["sap/ui/integration/Designtime"], function (
 			form: {
 				items: {
 					"title": {
-						"manifestpath": "/sap.card/configuration/parameterstitle/value",
+						"manifestpath": "/sap.card/configuration/parameters/title/value",
 						"label": "Title",
 						"type": "string",
 						"translatable": true
