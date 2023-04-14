@@ -39,7 +39,7 @@ sap.ui.define([
 				"$orderby": "date1 desc"
 			},
 		}).then(function (aData) {
-			MessageToast.show("1.0.17")
+			//MessageToast.show("1.0.17")
 			return Promise.resolve(aData.value);
 		});
 	};
