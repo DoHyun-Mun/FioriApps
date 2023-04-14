@@ -1,0 +1,147 @@
+{
+    "_version": "1.14.0",
+	"sap.app": {
+		"id": "com.sap.demo.UICardDemo",
+		"type": "card",
+		"title": "일자별 추이 그래프 카드",
+		"subTitle": "샘플 그래프 카드",
+		"applicationVersion": {
+			"version": "1.0.17"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://business-card"
+		}
+	},
+    "sap.card": {
+        "type": "Analytical",
+        "designtime": "dt/configuration",
+        "extension": "./destinationEXT",
+		"header": {
+			"title": "일자별 금액 변동 추이",
+            "subTitle": "최근 5일 동안 금액 변동에 대한 정보를 확인",
+			"details": "상세내용, 추가 정보",
+			"type": "Numeric",
+            "data": {
+                "json": {
+                    "n": "54.17",
+                    "u": "%",
+                    "trend": "Up",
+                    "valueColor": "Good"
+                }
+            },
+			"unitOfMeasurement": "KRW",
+            "mainIndicator": {
+                "number": "{n}",
+                "unit": "{u}",
+                "trend": "{trend}",
+                "state": "{valueColor}"
+            },
+			"sideIndicators": [
+                {
+                    "title": "목표",
+                    "number": "300.00",
+                    "unit": "K"
+                },
+                {
+                    "title": "달성률",
+                    "number": "124.4",
+                    "unit": "%"
+                }
+            ]
+		},
+		"content": {
+			"chartType": "stacked_column",
+            "maxItems": 5,
+            "data": {
+                "extension": {
+                    "method": "getData"
+                }
+            },
+			"chartProperties": {
+				"title": {
+                    "text": "{parameters>/title/value}팀 매출 그래프",
+                    "alignment": "left"
+                },
+				"legendGroup": {
+                    "position": "bottom",
+                    "alignment": "topLeft"
+                },
+				"plotArea": {
+                    "dataLabel": {
+                        "visible": false,
+                        "showTotal": true
+                    }
+                },
+                "categoryAxis": {
+                    "title": {
+                        "visible": false
+                    }
+                },
+                "valueAxis": {
+                    "title": {
+                        "visible": false
+                    }
+                }
+			},
+			"dimensions": [
+                {
+                    "name": "Day",
+                    "value": "{date1}"
+                }
+            ],
+			"measures": [
+                {
+                    "name": "영업1팀",
+                    "value": "{cost1}"
+                },
+                {
+                    "name": "영업2팀",
+                    "value": "{cost2}"
+                }
+            ],
+			"feeds": [
+                {
+                    "type": "Dimension",
+                    "uid": "categoryAxis",
+                    "values": [
+                        "Day"
+                    ]
+                },
+                {
+                    "type": "Measure",
+                    "uid": "valueAxis",
+                    "values": [
+                        "영업1팀",
+                        "영업2팀"
+                    ]
+                }
+            ]
+            
+		},
+		"configuration": {
+            "destinations": {
+                "apikey": {
+                    "name": "dsapi",
+                    "label": "Choose a API",
+                    "defaultUrl": "dsapi"
+                }
+            },
+            "parameters": {
+                "title" : {
+					"value": "총무" ,
+                    "type" : "string",
+                    "label" : "팀명을 입력하세요."
+
+				}
+			}
+        }
+        
+    },
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
