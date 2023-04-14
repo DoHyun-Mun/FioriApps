@@ -6,7 +6,7 @@
 		"title": "일자별 추이 그래프 카드",
 		"subTitle": "샘플 그래프 카드",
 		"applicationVersion": {
-			"version": "1.0.17"
+			"version": "1.0.0"
 		}
 	},
 	"sap.ui": {
