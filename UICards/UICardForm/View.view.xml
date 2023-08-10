@@ -1,0 +1,44 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	      xmlns="sap.m"
+	      xmlns:f="sap.f"
+	      xmlns:form="sap.ui.layout.form"
+	      xmlns:layout="sap.ui.layout"
+		  xmlns:core="sap.ui.core"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          width="100%"
+          displayBlock="true"
+          controllerName="com.sap.demo.StepFlowCard.Main">
+	<form:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="3">
+		<form:content>
+			<Label text="요청자" />
+			<Input id="requestId" placeholder="Enter your Name"/>
+			
+			<Label text="수신자"/>
+			<Input id="receiveId" placeholder="Enter your Manager's Name"/>
+			
+			<Label text="휴직 기간"/>			
+			<DatePicker id="startDate" placeholder="Enter Start Date" 
+				valueFormat ="yyyy-MM-dd"
+				displayFormat ="yyyy-MM-dd">
+				<layoutData>
+					<form:ColumnElementData cellsSmall="6" cellsLarge="6"/>
+				</layoutData>
+			</DatePicker>
+			<DatePicker id="endDate" placeholder="Enter End Date" 
+				valueFormat ="yyyy-MM-dd"
+				displayFormat ="yyyy-MM-dd">				
+			</DatePicker>
+
+			<Label text="요청 사항"/>
+			<TextArea id="txaRequest"></TextArea>
+			
+			<Label />
+			<CheckBox id="chkAprove" text="위 내용 기반으로 육아 휴직 신청 합니다." />
+			
+			<Label />
+			<Button id="btnRequest" type="Emphasized" text="신 청" press="onCreateForm"/>
+			
+		</form:content>
+	</form:SimpleForm>
+</mvc:View>
+

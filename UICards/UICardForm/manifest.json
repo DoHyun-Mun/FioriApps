@@ -1,0 +1,58 @@
+{
+	"_version": "1.15.0",
+	"sap.app": {
+		"id": "com.sap.demo.StepFlowCard",
+		"type": "card",
+		"title": "육아휴직 신청서",
+		"subTitle": "Integration with PA",
+		"applicationVersion": {
+			"version": "1.1.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://technical-object"
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.sap.demo.StepFlowCard.View",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.38",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		}
+	},
+	"sap.card": {
+		"type": "Component",
+        "designtime": "dt/configuration",        
+		"configuration": {
+			"destinations": {
+				"bpa": {
+                    "name": "bpa_dest",
+                    "label": "Choose a API",
+                    "defaultUrl": "bpa_dest"
+                }
+			}
+		},
+		"header": {
+			"icon": {
+				"initials": "ME"
+			},
+			"title": "육아 휴직 신청서",
+			"subTitle": "매니저 승인 요청 양식 작성"
+		}
+	},
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
