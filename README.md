@@ -28,7 +28,7 @@ https://potaldemosvc-y56vwri9.jp10.build.cloud.sap/
 
 
 Setup & Provisioning Guide 
-https://workzon.one.int.sap/site#workzone-home&/blogs/show/RznP2MSa6qW6kfuZ4CQKCb
+https://workzone.one.int.sap/site#workzone-home&/blogs/show/RznP2MSa6qW6kfuZ4CQKCb
 
 krdemo.user1@gmail.com / Workplace2021
 
