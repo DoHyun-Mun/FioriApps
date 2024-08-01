@@ -1,0 +1,76 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "com.sap.test.UICardKTNG99",
+		"type": "card",
+		"title": "UI Card KTNG Sample 99",
+		"subTitle": "UI Card SubTitle",
+		"applicationVersion": {
+			"version": "2.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://business-card"
+		}
+	},
+    "sap.card": {
+		"type": "List",
+		"editor": "dt/Configuration",
+		"header": {
+			"title": "{{parameters.title}}",
+			"subTitle": "{{parameters.subTitle}}",
+			"icon": {
+				"src": "sap-icon://desktop-mobile"
+			},
+			"status": {
+				"text": "5 of 20"
+			}
+		},
+		"configuration": {
+			"parameters": {
+				"title" : {
+					"value": "List Card with Top 10 Products" ,
+                    "type" : "string",
+                    "label" : "차트타이틀입력"
+
+				},
+				"subTitle": {
+					"value": "These are the top sellers this month",
+                    "type" : "string",
+                    "label" : "서브타이틀입력"
+				}
+			},
+			"destinations": {
+				"northwind": {
+                    "name": "northwind",
+                    "label": "Choose a API",
+                    "defaultUrl": "northwind"
+                }
+			}
+		},
+		"content": {
+			"data": {				
+				"request": {
+					"url": "{{destinations.northwind}}/v1/workflow-instances"
+				},
+				"headers": {
+					"Content-Type": "application/json"
+				},
+				"withCredentials": true,
+				"path": "/value"
+			},
+			"maxItems": 5,
+			"item": {
+				"title": "{ProductName}",
+				"description": "{QuantityPerUnit}",
+				"highlight": "{= ${ProductID}===1 ? 'Error' : ${ProductID}===2 ? 'Success' : ${ProductID}===3 ? 'Information' : ${ProductID}===4 ? 'Warning' : 'None'}"
+			}
+		}
+	},
+    "sap.platform.mobilecards": {
+        "compatible": true
+    }
+}
