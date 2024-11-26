@@ -58,7 +58,7 @@ sap.ui.define(["sap/ui/integration/Extension", "sap/ui/model/json/JSONModel", 's
                 }						
             }
 		}).then(function () {
-			oCard.showMessage("{form>/inpEmail} 발신 완료", "Success");
+			oCard.showMessage("육아 휴직 신청서 {form>/inpEmail} 발신 완료", "Success");
 		}).catch(function (sErrorMessage) {
 			oCard.showMessage(sErrorMessage, "Error");
 		});
