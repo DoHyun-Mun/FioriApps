@@ -1,0 +1,179 @@
+{
+	"_version": "1.15.0",
+	"sap.app": {
+		"id": "com.sap.test.UICardObject",
+		"type": "card",
+		"title": "UI Card Object Type Test",
+		"subTitle": "UI Card Object App",
+		"applicationVersion": {
+			"version": "1.0.4"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://switch-classes"
+		}
+	},
+	"sap.card": {
+		"type": "Object",
+		"extension": "./extension",
+		"configuration": {			
+			"destinations": {
+				"bpa": {
+                    "name": "bpa_dest",
+                    "label": "Choose a API",
+                    "defaultUrl": "bpa_dest"
+                }
+			}
+		},
+		"data": {
+			"json": {
+				"reasons": [
+					{
+						"id": "subject1",
+						"title": "육아 휴직 신청서"
+					},
+					{
+						"id": "subject2",
+						"title": "아동 수당 신청서"
+					}
+				]
+			}
+		},
+		"header": {
+			"icon": {
+				"initials": "ME"
+			},
+			"title": "육아 휴직 신청서",
+			"subTitle": "매니저 승인 요청 양식 작성"
+		},
+		"content": {
+			"groups": [
+				{
+					"alignment": "Stretch",
+					"items": [
+						{
+							"value": "매니저 승인이 필요 합니다.",
+							"type": "Status",
+							"state": "Information",
+							"showStateIcon": true
+						},
+						{
+							"value": "아래 양식 내용을 작성 해 주세요."
+						}
+					]
+				},
+				{
+					"alignment": "Stretch",
+					"items": [
+						{
+							"id": "reason",
+							"label": "사유",
+							"type": "ComboBox",
+							"placeholder": "Select",
+							"selectedKey" : "subject1",
+							"item": {
+								"path": "/reasons",
+								"template": {
+									"key": "{id}",
+									"title": "{title}"
+								}
+							},
+							"validations": [
+								{
+									"required": true
+								}
+							]
+						},	
+						{
+							"id": "reqName",
+							"label": "발신자",
+							"type": "Input",
+							"placeholder": "Name",
+							"validations": [
+								{
+									"required": true
+								}
+							]
+						},
+						{
+							"id": "txtEmail",
+							"label": "수신자",
+							"value": "dohyun.mun@sap.com",
+							"placeholder": "수신자"					
+						},
+						{
+							"id": "inpEmail",
+							"label": "수신자",
+							"type": "Input",
+							"value": "dohyun.mun@sap.com",
+							"visible": false
+						},						
+						{
+							"id": "startDate",
+							"label": "시작일자",
+							"type": "Input",
+							"value" : "{= format.dateTime(Date.now(), {pattern: 'yyyy-MM-dd'})}",
+							"placeholder": "예 {= format.dateTime('2030-12-31', {pattern: 'yyyy-MM-dd'})}",
+							"validations": [
+								{
+									"required": true								
+								},
+								{
+									"maxLength": 200,
+									"message": "8자리 날짜를 입력하세요.",
+									"type": "Warning"
+								}
+							]
+						},
+						{
+							"id": "endDate",
+							"label": "종료일자",
+							"type": "Input",
+							"value" : "{= format.dateTime('2030-12-31', {pattern: 'yyyy-MM-dd'})}",
+							"placeholder": "예 {= format.dateTime('2030-12-31', {pattern: 'yyyy-MM-dd'})}",
+							"validations": [
+								{
+									"required": true
+								},
+								{
+									"maxLength": 200,
+									"message": "8자리 날짜를 입력하세요.",
+									"type": "Warning"
+								}
+							]
+						},
+						{
+							"id": "comment",
+							"label": "추가 요청 사항",
+							"type": "TextArea",
+							"rows": 4,
+							"placeholder": "Comment",
+							"showColon": false
+						}
+
+					]
+				}
+			]
+		},
+		"footer": {
+			"actionsStrip": [
+				{
+					"text": "Submit",
+					"buttonType": "Accept",
+					"actions": [
+						{
+							"type": "Submit"						
+						}						
+					]
+
+				}
+			]
+		}
+	},
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
