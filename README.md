@@ -26,9 +26,11 @@ https://adaptivecards.io/designer/
 Process Automation URL
 https://potaldemosvc-y56vwri9.jp10.build.cloud.sap/
 
-
 Setup & Provisioning Guide 
 https://workzone.one.int.sap/site#workzone-home&/blogs/show/RznP2MSa6qW6kfuZ4CQKCb
+
+Cloud Connector Tutorial
+https://learning.sap.com/learning-journeys/connecting-sap-btp-and-on-premise-systems-using-the-cloud-connector
 
 krdemo.user1@gmail.com / Workplace2023
 
