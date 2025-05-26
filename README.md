@@ -32,7 +32,7 @@ https://workzone.one.int.sap/site#workzone-home&/blogs/show/RznP2MSa6qW6kfuZ4CQK
 Cloud Connector Tutorial
 https://learning.sap.com/learning-journeys/connecting-sap-btp-and-on-premise-systems-using-the-cloud-connector
 
-krdemo.user1@gmail.com / Workplace2023
+btpdemo.user1@gmail.com / Demouser02!@
 
 demo.user1~36, 38~50 02
 demo.user37 22
