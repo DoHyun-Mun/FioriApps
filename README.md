@@ -34,4 +34,5 @@ https://learning.sap.com/learning-journeys/connecting-sap-btp-and-on-premise-sys
 
 krdemo.user1@gmail.com / Workplace2023
 
-demo.user1	~ demo.user50
+demo.user1~36, 38~50 02
+demo.user37 22
