@@ -1,6 +1,3 @@
-# FioriApps
-
-
 
 Workzone URL
 https://wzariba.workzone.cfapps.ap11.hana.ondemand.com/site?sap-language=en#workzone-home&/home
