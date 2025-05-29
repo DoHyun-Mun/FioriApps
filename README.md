@@ -31,6 +31,7 @@ https://learning.sap.com/learning-journeys/connecting-sap-btp-and-on-premise-sys
 
 btpdemo.user1@gmail.com / Demouser02!@
 
-demo.user1~36 02 
-demo.user38~50 02
-demo.user37 22
+demo.user1-36: 02 
+demo.user37: 22
+demo.user38-50: 02
+
